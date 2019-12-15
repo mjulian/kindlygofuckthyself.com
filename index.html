@@ -28,7 +28,7 @@
       .then((response) => response.text())
       .then((raw) => raw.split("\n").filter((s) => s.length > 0))
       .then((items) => {
-        const i = Math.floor(Math.random() * Math.floor(items.length - 1));
+        const i = Math.floor(Math.random() * Math.floor(items.length));
         document.getElementById('quote-box').innerHTML = items[i];
       });
     </script>
