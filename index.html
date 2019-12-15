@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta description="Sometimes you gotta tell someone off, but that doesn't mean you have to be crass. Here's some creative help.">
+    <title>Kindly Go Fuck Thyself</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+      </header>
+      <main role="main" class="inner cover">
+        <h1 id="quote-box" class="cover-heading"></h1>
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Made with love by <a href="https://twitter.com/mike_julian">@mike_julian</a></p>
+        </div>
+      </footer>
+    </div>
+    <script>
+      fetch('quotes.txt')
+      .then((response) => response.text())
+      .then((raw) => raw.split("\n").filter((s) => s.length > 0))
+      .then((items) => {
+        const i = Math.floor(Math.random() * Math.floor(items.length - 1));
+        document.getElementById('quote-box').innerText = items[i];
+      });
+    </script>
+  </body>
+</html>
